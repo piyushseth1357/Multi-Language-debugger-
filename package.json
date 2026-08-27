@@ -1,0 +1,19 @@
+{
+  "name": "multi-language-error-debugger-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Multi-Language Automatic Error Debugger for VS Code, CLI, and IDEs",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces",
+    "compile": "tsc -b",
+    "test": "npm run test --workspaces --if-present",
+    "package:extension": "cd packages/vscode-extension && npx vsce package"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "typescript": "^5.3.3"
+  }
+}

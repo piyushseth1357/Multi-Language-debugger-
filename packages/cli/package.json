@@ -1,0 +1,20 @@
+{
+  "name": "error-debugger-cli",
+  "version": "1.0.0",
+  "description": "Standalone CLI runner for Multi-Language Error Debugger",
+  "main": "dist/cli.js",
+  "bin": {
+    "error-debugger": "dist/cli.js"
+  },
+  "scripts": {
+    "build": "npx tsc"
+  },
+  "dependencies": {
+    "@error-debugger/core-engine": "*",
+    "@error-debugger/shared-types": "*"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "typescript": "^5.3.3"
+  }
+}

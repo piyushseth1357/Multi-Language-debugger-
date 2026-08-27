@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true
+  },
+  "references": [
+    { "path": "./packages/shared-types" },
+    { "path": "./packages/core-engine" },
+    { "path": "./packages/vscode-extension" },
+    { "path": "./packages/cli" }
+  ],
+  "exclude": [
+    "complex_demo.ts",
+    "complex_demo.py"
+  ]
+}

@@ -1,0 +1,87 @@
+{
+    "name": "Spanish (Español)",
+    "ui": {
+        "title": "Depurador de Errores Multilingüe",
+        "fileLabel": "Archivo",
+        "lineLabel": "Línea",
+        "problemLabel": "Resumen del Problema",
+        "causeLabel": "Causa",
+        "fixLabel": "Pasos para Solucionar",
+        "confidenceLabel": "Confianza",
+        "applyFixBtn": "Aplicar solución en editor",
+        "copyFixBtn": "Copiar código de solución",
+        "askAiPlaceholder": "Haz una pregunta sobre este error...",
+        "askAiBtn": "Preguntar a IA",
+        "tierPattern": "Nivel 1: Buscador de Patrones Local (Sin Conexión / Gratuito)",
+        "tierLlm": "Nivel 2: Motor IA Secundario",
+        "noErrorYet": "No se ha detectado ningún error todavía. La explicación aparecerá automáticamente aquí cuando ocurra un error de compilación, ejecución o Git."
+    },
+    "patterns": {
+        "ts_cannot_find_name_cause": "La variable, clase o función que intentas usar no ha sido declarada ni importada.",
+        "ts_cannot_find_name_fix": [
+            "Verifica si el módulo necesario está importado al inicio del archivo.",
+            "Revisa la ortografía del nombre de la variable.",
+            "Instala los tipos requeridos si usas una librería externa (`@types/paquete`)."
+        ],
+        "ts_property_does_not_exist_cause": "La propiedad o método no existe en el tipo u objeto que estás accediendo.",
+        "ts_property_does_not_exist_fix": [
+            "Verifica el nombre de la propiedad.",
+            "Añade el campo a la interfaz o definición de tipos.",
+            "Utiliza encadenamiento opcional (`?.`)."
+        ],
+        "py_syntax_error_cause": "El intérprete de Python encontró una sintaxis no válida en el código.",
+        "py_syntax_error_fix": [
+            "Comprueba si falta un par de puntos `:` al final de la declaración.",
+            "Verifica que todos los paréntesis `()`, corchetes `[]` y comillas estén cerrados."
+        ],
+        "py_indentation_error_cause": "La sangría en Python no está alineada correctamente.",
+        "py_indentation_error_fix": [
+            "Asegúrate de usar 4 espacios de sangría en cada bloque.",
+            "No mezcles tabuladores y espacios."
+        ],
+        "js_undefined_prop_cause": "Estás intentando leer una propiedad de un objeto no definido (`undefined`) o nulo (`null`).",
+        "js_undefined_prop_fix": [
+            "Comprueba que el objeto exista antes de acceder a sus propiedades.",
+            "Usa el operador de encadenamiento opcional `?.`.",
+            "Asigna un valor predeterminado al objeto."
+        ],
+        "py_name_error_cause": "Intentas acceder a una variable o función no definida en el ámbito actual.",
+        "py_name_error_fix": [
+            "Define la variable antes de usarla.",
+            "Importa el módulo correspondiente."
+        ],
+        "py_module_not_found_cause": "Falta el paquete o módulo requerido en el entorno de Python.",
+        "py_module_not_found_fix": [
+            "Ejecuta `pip install <nombre-del-modulo>` en la terminal.",
+            "Asegúrate de que el entorno virtual esté activo."
+        ],
+        "node_eaddrinuse_cause": "El puerto en el que el servidor Node intenta ejecutarse ya está ocupado por otro proceso.",
+        "node_eaddrinuse_fix": [
+            "Detén el proceso anterior en la terminal.",
+            "O ejecuta `npx kill-port <puerto>`.",
+            "O cambia el número de puerto en la configuración."
+        ],
+        "git_push_rejected_cause": "El repositorio remoto contiene confirmaciones (commits) que no están en tu rama local.",
+        "git_push_rejected_fix": [
+            "Obtén primero los cambios remotos: `git pull --rebase origin main`",
+            "Resuelve los conflictos si los hay.",
+            "Ejecuta `git push origin main` nuevamente."
+        ],
+        "git_merge_conflict_cause": "Hay cambios diferentes en las mismas líneas entre dos ramas que Git no puede fusionar automáticamente.",
+        "git_merge_conflict_fix": [
+            "Abre el archivo, resuelve los marcadores de conflicto (`<<<<<<<`, `=======`, `>>>>>>>`).",
+            "Ejecuta `git add <archivo>`.",
+            "Ejecuta `git commit -m \"Resolver conflicto de fusión\"`."
+        ],
+        "git_detached_head_cause": "Estás en estado de 'HEAD desvinculado' (revisando un commit específico directamente).",
+        "git_detached_head_fix": [
+            "Crea una nueva rama: `git switch -c nombre-nueva-rama`",
+            "O regresa a la rama principal: `git checkout main`"
+        ],
+        "git_auth_failed_cause": "Error de autenticación con el servidor Git remoto.",
+        "git_auth_failed_fix": [
+            "Agrega tu clave SSH al agente: `ssh-add ~/.ssh/id_ed25519`.",
+            "Verifica tu Token de Acceso Personal o configuración SSH."
+        ]
+    }
+}

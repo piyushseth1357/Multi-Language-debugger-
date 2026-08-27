@@ -1,0 +1,38 @@
+[
+    {
+        "id": "js_cannot_read_property_undefined",
+        "category": "runtime",
+        "keywords": ["Cannot read property", "Cannot read properties of undefined", "TypeError"],
+        "regex": "Cannot read properties? of undefined \\(reading ['\"]?(\\w+)['\"]?\\)",
+        "causeKey": "js_undefined_prop_cause",
+        "fixKey": "js_undefined_prop_fix",
+        "exampleFixCode": "// Use optional chaining:\nconst value = object?.$1;"
+    },
+    {
+        "id": "py_name_error",
+        "category": "runtime",
+        "keywords": ["NameError: name", "is not defined"],
+        "regex": "NameError: name ['\"]?(\\w+)['\"]? is not defined",
+        "causeKey": "py_name_error_cause",
+        "fixKey": "py_name_error_fix",
+        "exampleFixCode": "# Define variable before using or import missing module:\n$1 = None"
+    },
+    {
+        "id": "py_module_not_found",
+        "category": "runtime",
+        "keywords": ["ModuleNotFoundError: No module named"],
+        "regex": "ModuleNotFoundError: No module named ['\"]?(\\w+)['\"]?",
+        "causeKey": "py_module_not_found_cause",
+        "fixKey": "py_module_not_found_fix",
+        "exampleFixCode": "pip install $1"
+    },
+    {
+        "id": "node_port_eaddrinuse",
+        "category": "runtime",
+        "keywords": ["EADDRINUSE", "address already in use"],
+        "regex": "EADDRINUSE:? address already in use (?::::)?(\\d+)?",
+        "causeKey": "node_eaddrinuse_cause",
+        "fixKey": "node_eaddrinuse_fix",
+        "exampleFixCode": "# Kill process using the port (Windows):\nnpx kill-port $1"
+    }
+]

@@ -1,0 +1,1 @@
+{"version":3,"file":"compileErrorParser.d.ts","sourceRoot":"","sources":["../../src/detectors/compileErrorParser.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,aAAa,EAAE,MAAM,8BAA8B,CAAC;AAE7D,qBAAa,kBAAkB;IACtB,eAAe,CACpB,OAAO,EAAE,MAAM,EACf,IAAI,CAAC,EAAE,MAAM,EACb,IAAI,CAAC,EAAE,MAAM,EACb,MAAM,CAAC,EAAE,MAAM,EACf,WAAW,CAAC,EAAE,MAAM,GACnB,aAAa;CAYjB"}

@@ -1,0 +1,1 @@
+{"version":3,"file":"patternMatcher.d.ts","sourceRoot":"","sources":["../../src/explainers/patternMatcher.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,aAAa,EAAE,WAAW,EAAE,iBAAiB,EAAmC,MAAM,8BAA8B,CAAC;AAW9H,qBAAa,cAAc;IACzB,OAAO,CAAC,OAAO,CAKb;IAEF,OAAO,CAAC,KAAK,CAAgB;;IAUtB,KAAK,CAAC,QAAQ,EAAE,aAAa,EAAE,QAAQ,EAAE,iBAAiB,GAAG,WAAW,GAAG,IAAI;CAiGvF"}

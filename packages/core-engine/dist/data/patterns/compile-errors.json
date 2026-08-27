@@ -1,0 +1,78 @@
+[
+    {
+        "id": "py_expected_indented_block",
+        "category": "compile",
+        "keywords": ["Expected indented block"],
+        "causeKey": "py_expected_indented_block_cause",
+        "fixKey": "py_expected_indented_block_fix",
+        "exampleFixCode": "        pass"
+    },
+    {
+        "id": "py_unexpected_indentation",
+        "category": "compile",
+        "keywords": ["Unexpected indentation"],
+        "causeKey": "py_unexpected_indentation_cause",
+        "fixKey": "py_unexpected_indentation_fix",
+        "exampleFixCode": "    # Indentation auto-aligned (4 spaces)"
+    },
+    {
+        "id": "py_return_outside_function",
+        "category": "compile",
+        "keywords": ["\"return\" can be used only within a function"],
+        "causeKey": "py_return_outside_function_cause",
+        "fixKey": "py_return_outside_function_fix",
+        "exampleFixCode": "    # Move return statement inside function def"
+    },
+    {
+        "id": "py_const_statement_error",
+        "category": "compile",
+        "keywords": ["Statements must be separated by newlines or semicolons"],
+        "causeKey": "py_const_statement_cause",
+        "fixKey": "py_const_statement_fix",
+        "exampleFixCode": "x = user15"
+    },
+    {
+        "id": "py_const_not_defined",
+        "category": "compile",
+        "keywords": ["\"const\" is not defined"],
+        "causeKey": "py_const_statement_cause",
+        "fixKey": "py_const_statement_fix",
+        "exampleFixCode": "x = user15"
+    },
+    {
+        "id": "ts_cannot_find_name",
+        "category": "compile",
+        "keywords": ["Cannot find name", "TS2304"],
+        "regex": "Cannot find name ['\"]?(\\w+)['\"]?",
+        "causeKey": "ts_cannot_find_name_cause",
+        "fixKey": "ts_cannot_find_name_fix",
+        "exampleFixCode": "import { $1 } from './$1';"
+    },
+    {
+        "id": "ts_property_does_not_exist",
+        "category": "compile",
+        "keywords": ["Property", "does not exist on type", "TS2339"],
+        "regex": "Property ['\"]?(\\w+)['\"]? does not exist on type ['\"]?(\\w+)['\"]?",
+        "causeKey": "ts_property_does_not_exist_cause",
+        "fixKey": "ts_property_does_not_exist_fix",
+        "exampleFixCode": "interface $2 {\n  $1?: string;\n}"
+    },
+    {
+        "id": "py_syntax_error",
+        "category": "compile",
+        "keywords": ["SyntaxError: invalid syntax", "SyntaxError:"],
+        "regex": "SyntaxError: invalid syntax",
+        "causeKey": "py_syntax_error_cause",
+        "fixKey": "py_syntax_error_fix",
+        "exampleFixCode": "    pass"
+    },
+    {
+        "id": "py_indentation_error",
+        "category": "compile",
+        "keywords": ["IndentationError: unexpected indent", "IndentationError:"],
+        "regex": "IndentationError: (\\w+)",
+        "causeKey": "py_indentation_error_cause",
+        "fixKey": "py_indentation_error_fix",
+        "exampleFixCode": "    pass"
+    }
+]

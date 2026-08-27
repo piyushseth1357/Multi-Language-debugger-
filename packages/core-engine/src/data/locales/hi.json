@@ -1,0 +1,105 @@
+{
+  "name": "Hinglish / Hindi",
+  "ui": {
+    "title": "Multi-Language Error Debugger",
+    "fileLabel": "File",
+    "lineLabel": "Line",
+    "problemLabel": "Problem Summary",
+    "causeLabel": "Wajah (Cause)",
+    "fixLabel": "Solution (Fix Steps)",
+    "confidenceLabel": "Confidence",
+    "applyFixBtn": "Apply Fix in Editor",
+    "copyFixBtn": "Copy Solution Code",
+    "askAiPlaceholder": "Koyi sawaal poocho is error ke baare mein...",
+    "askAiBtn": "Poocho (Ask AI)",
+    "tierPattern": "Tier 1: Local Pattern Matcher (Offline / Free)",
+    "tierLlm": "Tier 2: AI Fallback Engine",
+    "noErrorYet": "Abhi tak koi error detect nahi hua hai. Jab compile, runtime ya git error aayega toh explanation yahan auto-appear hoga."
+  },
+  "patterns": {
+    "ts_cannot_find_name_cause": "Aap jo variable, class ya function use kar rahe hain, woh declare ya import nahi kiya gaya hai.",
+    "ts_cannot_find_name_fix": [
+      "File ke top par check karein ki required module/variable import hai ya nahi.",
+      "Variable name me spelling mistake check karein.",
+      "Agar external library hai toh `@types/package` install karein."
+    ],
+    "ts_property_does_not_exist_cause": "Object ke paas woh property ya method exist nahi karta jo aap access karne ki koshish kar rahe hain.",
+    "ts_property_does_not_exist_fix": [
+      "Property ki spelling check karein.",
+      "Interface/Type definition me field ko add karein.",
+      "Optional chaining (`?.`) ka use karein agar object undefined ho sakta hai."
+    ],
+    "py_expected_indented_block_cause": "Python me block (if, for, def, class) ke neeche 4 spaces ki indentation zaroori hoti hai.",
+    "py_expected_indented_block_fix": [
+      "Block statement ke neeche 4 spaces ka gap/indentation dein.",
+      "Indented block me valid statement ya `pass` likhein."
+    ],
+    "py_unexpected_indentation_cause": "Line ke start me extra spaces hain jisse Python indentation alignment bigad gaya hai.",
+    "py_unexpected_indentation_fix": [
+      "Line ke start se extra spaces remove karke 4-space block align karein."
+    ],
+    "py_return_outside_function_cause": "`return` statement kisi function (def) ke bahar likha gaya hai.",
+    "py_return_outside_function_fix": [
+      "`return` statement ko `def` function ke andar move karein ya remove karein."
+    ],
+    "py_const_statement_cause": "Python me 'const' ya 'let' keyword use nahi hota. Aap Python file (.py) me JavaScript syntax likh rahe hain.",
+    "py_const_statement_fix": [
+      "Line ke start se 'const' ya 'let' keyword ko remove karein.",
+      "Python me direct variable assignment syntax use karein: x = user15"
+    ],
+    "py_syntax_error_cause": "Python interpreter ko code structure me invalid syntax mila hai (jaise missing colon, unmatched parenthesis).",
+    "py_syntax_error_fix": [
+      "Statement (if, for, def, class) ke end par colon `:` miss toh nahi hai dekhein.",
+      "Parentheses `()`, brackets `[]`, aur quotes `\"\"` properly closed hain ya nahi check karein."
+    ],
+    "py_indentation_error_cause": "Python me spaces ya tabs properly align nahi hain.",
+    "py_indentation_error_fix": [
+      "Har block me strictly 4 spaces ka indentation use karein.",
+      "Tabs aur Spaces ko mix na karein."
+    ],
+    "js_undefined_prop_cause": "Aap kisi undefined ya null object se property read kar rahe hain.",
+    "js_undefined_prop_fix": [
+      "Access karne se pehle check karein ki object exist karta hai ya nahi.",
+      "Optional chaining operator `?.` ka upayog karein (e.g. `obj?.prop`).",
+      "Object ko default value assigning karein."
+    ],
+    "py_name_error_cause": "Aap aise variable/function ko access kar rahe hain jo code me pehle define nahi kiya gaya.",
+    "py_name_error_fix": [
+      "Variable ko use karne se pehle assign/define karein.",
+      "Agar external module hai toh `import` statement lagayein."
+    ],
+    "py_module_not_found_cause": "Python environment me required module/package missing hai.",
+    "py_module_not_found_fix": [
+      "Terminal me `pip install <module-name>` chalayein.",
+      "Virtual environment activated hai ya nahi verify karein."
+    ],
+    "node_eaddrinuse_cause": "Aapka Node server jis port par start hone ki koshish kar raha hai, woh port pehle se kisi aur process dwara occupied hai.",
+    "node_eaddrinuse_fix": [
+      "Terminal me old server process ko stop karein.",
+      "Ya `npx kill-port <port>` command chalayein.",
+      "Ya application configuration me doosra port select karein."
+    ],
+    "git_push_rejected_cause": "Remote repository me naye commits hain jo aapke local branch par missing hain.",
+    "git_push_rejected_fix": [
+      "Pehle remote changes pull karein: `git pull --rebase origin main`",
+      "Conflicts solve karein agar aayein.",
+      "Fir se push karein: `git push origin main`"
+    ],
+    "git_merge_conflict_cause": "Do branches me same line me alag changes hain jisse Git automatically merge nahi kar paa raha.",
+    "git_merge_conflict_fix": [
+      "File me conflict markers (`<<<<<<<`, `=======`, `>>>>>>>`) check karke correct code retain karein.",
+      "`git add <filename>` karke conflict staging me dalein.",
+      "`git commit -m \"Fixed merge conflict\"` run karein."
+    ],
+    "git_detached_head_cause": "Aap direct commit hash par checkout kiye huye hain, kisi active branch par nahi.",
+    "git_detached_head_fix": [
+      "Nayi branch create karne ke liye: `git switch -c new-branch-name`",
+      "Wapas main branch me jaane ke liye: `git checkout main`"
+    ],
+    "git_auth_failed_cause": "Git server (GitHub/GitLab) ke saath SSH key ya credentials authenticate nahi ho paaye.",
+    "git_auth_failed_fix": [
+      "Apna SSH key agent me add karein (`ssh-add ~/.ssh/id_ed25519`).",
+      "GitHub Personal Access Token ya SSH key setup verify karein."
+    ]
+  }
+}

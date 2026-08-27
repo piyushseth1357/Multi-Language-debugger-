@@ -1,0 +1,105 @@
+{
+    "name": "English",
+    "ui": {
+        "title": "Multi-Language Error Debugger",
+        "fileLabel": "File",
+        "lineLabel": "Line",
+        "problemLabel": "Problem Summary",
+        "causeLabel": "Cause",
+        "fixLabel": "Fix Steps",
+        "confidenceLabel": "Confidence",
+        "applyFixBtn": "Apply Fix in Editor",
+        "copyFixBtn": "Copy Fix Code",
+        "askAiPlaceholder": "Ask a follow-up question about this error...",
+        "askAiBtn": "Ask AI",
+        "tierPattern": "Tier 1: Local Pattern Matcher (Offline / Free)",
+        "tierLlm": "Tier 2: AI Fallback Engine",
+        "noErrorYet": "No error detected yet. When compile, runtime, or git errors occur, explanations will automatically appear here."
+    },
+    "patterns": {
+        "ts_cannot_find_name_cause": "The variable, class, or function you are trying to use has not been declared or imported.",
+        "ts_cannot_find_name_fix": [
+            "Check if the required module is imported at the top of the file.",
+            "Check for typos in the variable name.",
+            "Install required types (`@types/package`) if using an external library."
+        ],
+        "ts_property_does_not_exist_cause": "The property or method does not exist on the type or object being accessed.",
+        "ts_property_does_not_exist_fix": [
+            "Verify the spelling of the property name.",
+            "Add the field to the interface or type definition.",
+            "Use optional chaining (`?.`) if object might be undefined."
+        ],
+        "py_expected_indented_block_cause": "An indented block of 4 spaces is expected after a block statement (def, class, if, for).",
+        "py_expected_indented_block_fix": [
+            "Indent the code line by 4 spaces below the block statement.",
+            "Add a valid statement or `pass` keyword."
+        ],
+        "py_unexpected_indentation_cause": "Line has extra unaligned leading spaces causing an indentation error.",
+        "py_unexpected_indentation_fix": [
+            "Align the line indentation with the surrounding block (4 spaces)."
+        ],
+        "py_return_outside_function_cause": "`return` statement used outside of a function body.",
+        "py_return_outside_function_fix": [
+            "Move the `return` statement inside a `def` function body or remove it."
+        ],
+        "py_const_statement_cause": "Python does not support 'const' or 'let' keywords. JavaScript variable declaration syntax was used in a Python (.py) file.",
+        "py_const_statement_fix": [
+            "Remove 'const' or 'let' from the start of line.",
+            "Use standard Python variable assignment: x = user15"
+        ],
+        "py_syntax_error_cause": "Python interpreter found invalid syntax in the code.",
+        "py_syntax_error_fix": [
+            "Check if a colon `:` is missing at the end of statement.",
+            "Ensure all parentheses `()`, brackets `[]`, and quotes are properly closed."
+        ],
+        "py_indentation_error_cause": "Indentation in Python code is misaligned.",
+        "py_indentation_error_fix": [
+            "Use consistent 4-space indentation for every code block.",
+            "Do not mix tabs and spaces."
+        ],
+        "js_undefined_prop_cause": "You are reading a property of an `undefined` or `null` object.",
+        "js_undefined_prop_fix": [
+            "Verify object exists before reading properties.",
+            "Use optional chaining `?.` operator.",
+            "Assign default fallback values to the object."
+        ],
+        "py_name_error_cause": "Accessing a variable or function that has not been defined in scope.",
+        "py_name_error_fix": [
+            "Define variable before referencing it.",
+            "Import missing module."
+        ],
+        "py_module_not_found_cause": "Required Python package is missing in environment.",
+        "py_module_not_found_fix": [
+            "Run `pip install <module-name>` in terminal.",
+            "Verify virtual environment is active."
+        ],
+        "node_eaddrinuse_cause": "The port the server is trying to bind to is already in use by another process.",
+        "node_eaddrinuse_fix": [
+            "Stop old server running in terminal.",
+            "Run `npx kill-port <port>`.",
+            "Change port number in app config."
+        ],
+        "git_push_rejected_cause": "Remote repository contains commits that do not exist in your local branch.",
+        "git_push_rejected_fix": [
+            "Pull remote changes first: `git pull --rebase origin main`",
+            "Resolve conflicts if any.",
+            "Push again: `git push origin main`"
+        ],
+        "git_merge_conflict_cause": "Conflicting changes on the same lines prevent automatic merge.",
+        "git_merge_conflict_fix": [
+            "Open file and resolve conflict markers (`<<<<<<<`, `=======`, `>>>>>>>`).",
+            "Run `git add <filename>`.",
+            "Run `git commit -m \"Fixed merge conflict\"`."
+        ],
+        "git_detached_head_cause": "You are currently in a detached HEAD state.",
+        "git_detached_head_fix": [
+            "Create a new branch: `git switch -c new-branch-name`",
+            "Or checkout main: `git checkout main`"
+        ],
+        "git_auth_failed_cause": "Authentication failed with the remote Git repository.",
+        "git_auth_failed_fix": [
+            "Add SSH key to agent: `ssh-add ~/.ssh/id_ed25519`.",
+            "Verify GitHub Personal Access Token or SSH setup."
+        ]
+    }
+}

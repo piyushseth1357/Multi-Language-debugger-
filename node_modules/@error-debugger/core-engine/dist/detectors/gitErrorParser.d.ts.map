@@ -1,0 +1,1 @@
+{"version":3,"file":"gitErrorParser.d.ts","sourceRoot":"","sources":["../../src/detectors/gitErrorParser.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,aAAa,EAAE,MAAM,8BAA8B,CAAC;AAE7D,qBAAa,cAAc;IAClB,cAAc,CAAC,SAAS,EAAE,MAAM,GAAG,aAAa,GAAG,IAAI;CA0B/D"}

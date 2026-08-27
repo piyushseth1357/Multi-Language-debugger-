@@ -1,0 +1,38 @@
+[
+  {
+    "id": "git_push_rejected",
+    "category": "git",
+    "keywords": ["push", "rejected", "non-fast-forward", "fetch first"],
+    "regex": "updates were rejected because the remote contains work",
+    "causeKey": "git_push_rejected_cause",
+    "fixKey": "git_push_rejected_fix",
+    "exampleFixCode": "git pull --rebase origin main\ngit push origin main"
+  },
+  {
+    "id": "git_merge_conflict",
+    "category": "git",
+    "keywords": ["merge conflict", "Automatic merge failed", "CONFLICT"],
+    "regex": "CONFLICT \\(content\\): Merge conflict in (.+)",
+    "causeKey": "git_merge_conflict_cause",
+    "fixKey": "git_merge_conflict_fix",
+    "exampleFixCode": "# Resolve conflict markers in file, then run:\ngit add $1\ngit commit -m \"Fix merge conflicts\""
+  },
+  {
+    "id": "git_detached_head",
+    "category": "git",
+    "keywords": ["HEAD detached", "detached HEAD"],
+    "regex": "You are in 'detached HEAD' state",
+    "causeKey": "git_detached_head_cause",
+    "fixKey": "git_detached_head_fix",
+    "exampleFixCode": "git switch -c new-feature-branch"
+  },
+  {
+    "id": "git_permission_denied",
+    "category": "git",
+    "keywords": ["Permission denied (publickey)", "Authentication failed"],
+    "regex": "Permission denied \\(publickey\\)|Authentication failed",
+    "causeKey": "git_auth_failed_cause",
+    "fixKey": "git_auth_failed_fix",
+    "exampleFixCode": "# Check SSH key or update credentials:\nssh-add ~/.ssh/id_ed25519"
+  }
+]

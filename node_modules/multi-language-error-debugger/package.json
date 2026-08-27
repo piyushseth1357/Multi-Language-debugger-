@@ -1,0 +1,146 @@
+{
+  "name": "multi-language-error-debugger",
+  "displayName": "Multi-Language Error Debugger",
+  "description": "Automatically intercepts compile, runtime, and Git errors and explains them in Hindi/Hinglish, Spanish, French, or English with 1-click code fixes.",
+  "version": "1.0.0",
+  "publisher": "piyushseth",
+  "author": {
+    "name": "Piyush Seth"
+  },
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Debuggers",
+    "Linters",
+    "Other"
+  ],
+  "activationEvents": [
+    "*"
+  ],
+  "enabledApiProposals": [
+    "terminalDataWriteEvent"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "errorDebuggerContainer",
+          "title": "Error Debugger",
+          "icon": "$(bug)"
+        }
+      ]
+    },
+    "views": {
+      "errorDebuggerContainer": [
+        {
+          "type": "webview",
+          "id": "errorDebuggerView",
+          "name": "Error Explanation",
+          "icon": "$(bug)"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "errorDebugger.explainCurrentError",
+        "title": "Error Debugger: Explain Active File Error",
+        "category": "Error Debugger"
+      },
+      {
+        "command": "errorDebugger.openWebview",
+        "title": "Error Debugger: Open Debug Panel",
+        "category": "Error Debugger"
+      },
+      {
+        "command": "errorDebugger.changeLanguage",
+        "title": "Error Debugger: Change Language (Hinglish/Spanish/French/English)",
+        "category": "Error Debugger"
+      }
+    ],
+    "configuration": {
+      "type": "object",
+      "title": "Multi-Language Error Debugger Settings",
+      "properties": {
+        "errorDebugger.language": {
+          "type": "string",
+          "default": "hi",
+          "enum": [
+            "hi",
+            "es",
+            "fr",
+            "en"
+          ],
+          "enumDescriptions": [
+            "Hindi / Hinglish",
+            "Spanish (Español)",
+            "French (Français)",
+            "English"
+          ],
+          "description": "Select your preferred language for error explanations."
+        },
+        "errorDebugger.llmProvider": {
+          "type": "string",
+          "default": "gemini",
+          "enum": [
+            "gemini",
+            "groq",
+            "openai",
+            "ollama",
+            "none"
+          ],
+          "description": "Tier 2 LLM provider for complex error fallback."
+        },
+        "errorDebugger.apiKey": {
+          "type": "string",
+          "default": "",
+          "description": "API Key for Gemini, Groq, or OpenAI."
+        },
+        "errorDebugger.apiEndpoint": {
+          "type": "string",
+          "default": "",
+          "description": "Custom API endpoint (required for Ollama or self-hosted LLM)."
+        },
+        "errorDebugger.modelName": {
+          "type": "string",
+          "default": "",
+          "description": "Custom model name (e.g. gemini-1.5-flash, llama-3.3-70b-versatile, gpt-4o-mini)."
+        },
+        "errorDebugger.enableAutoFix": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show 1-click Quick Fix code actions in the VS Code editor margin."
+        },
+        "errorDebugger.enableTerminalListener": {
+          "type": "boolean",
+          "default": true,
+          "description": "Automatically intercept terminal execution runtime errors."
+        },
+        "errorDebugger.enableDiagnosticsListener": {
+          "type": "boolean",
+          "default": true,
+          "description": "Automatically intercept compile-time and lint errors."
+        },
+        "errorDebugger.enableGitListener": {
+          "type": "boolean",
+          "default": true,
+          "description": "Automatically intercept Git execution and terminal stderr errors."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run build",
+    "build": "npx esbuild src/extension.ts --bundle --outfile=dist/extension.js --external:vscode --format=cjs --platform=node",
+    "watch": "npx esbuild src/extension.ts --bundle --outfile=dist/extension.js --external:vscode --format=cjs --platform=node --watch"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@error-debugger/core-engine": "*",
+    "@error-debugger/shared-types": "*",
+    "@types/node": "^20.11.0",
+    "@types/vscode": "^1.85.0",
+    "typescript": "^5.3.3"
+  }
+}

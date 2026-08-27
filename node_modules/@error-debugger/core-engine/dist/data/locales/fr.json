@@ -1,0 +1,87 @@
+{
+    "name": "French (Français)",
+    "ui": {
+        "title": "Débogueur d'Erreurs Multilingue",
+        "fileLabel": "Fichier",
+        "lineLabel": "Ligne",
+        "problemLabel": "Résumé du Problème",
+        "causeLabel": "Cause",
+        "fixLabel": "Étapes de Résolution",
+        "confidenceLabel": "Niveau de Confiance",
+        "applyFixBtn": "Appliquer la correction dans l'éditeur",
+        "copyFixBtn": "Copier le code de correction",
+        "askAiPlaceholder": "Posez une question sur cette erreur...",
+        "askAiBtn": "Demander à l'IA",
+        "tierPattern": "Niveau 1 : Reconnaissance de Motifs Local (Hors-ligne / Gratuit)",
+        "tierLlm": "Niveau 2 : Moteur IA de Secours",
+        "noErrorYet": "Aucune erreur détectée pour le moment. L'explication apparaîtra automatiquement ici dès qu'une erreur survient."
+    },
+    "patterns": {
+        "ts_cannot_find_name_cause": "La variable, classe ou fonction utilisée n'a pas été déclarée ou importée.",
+        "ts_cannot_find_name_fix": [
+            "Vérifiez si l'importation requise est présente en haut du fichier.",
+            "Vérifiez l'orthographe du nom de la variable.",
+            "Installez les types nécessaires (`@types/package`)."
+        ],
+        "ts_property_does_not_exist_cause": "La propriété ou méthode n'existe pas sur le type ou l'objet accédé.",
+        "ts_property_does_not_exist_fix": [
+            "Vérifiez l'orthographe de la propriété.",
+            "Ajoutez le champ dans la définition d'interface/type.",
+            "Utilisez le chaînage optionnel (`?.`)."
+        ],
+        "py_syntax_error_cause": "L'interpréteur Python a détecté une syntaxe invalide.",
+        "py_syntax_error_fix": [
+            "Vérifiez s'il manque deux-points `:` à la fin de l'instruction.",
+            "Vérifiez que toutes les parenthèses `()` et guillemets sont fermés."
+        ],
+        "py_indentation_error_cause": "L'indentation en Python n'est pas alignée correctement.",
+        "py_indentation_error_fix": [
+            "Utilisez exactement 4 espaces pour chaque niveau d'indentation.",
+            "Ne mélangez pas les tabulations et les espaces."
+        ],
+        "js_undefined_prop_cause": "Tentative de lecture d'une propriété sur un objet indéfini (`undefined`) ou nul (`null`).",
+        "js_undefined_prop_fix": [
+            "Vérifiez que l'objet existe avant d'accéder à ses propriétés.",
+            "Utilisez le chaînage optionnel `?.`.",
+            "Attribuez une valeur par défaut à l'objet."
+        ],
+        "py_name_error_cause": "Accès à une variable ou fonction non définie.",
+        "py_name_error_fix": [
+            "Définissez la variable avant de l'utiliser.",
+            "Importez le module correspondant."
+        ],
+        "py_module_not_found_cause": "Le module Python requis est introuvable.",
+        "py_module_not_found_fix": [
+            "Exécutez `pip install <nom-du-module>` dans le terminal.",
+            "Vérifiez que l'environnement virtuel est activé."
+        ],
+        "node_eaddrinuse_cause": "Le port sur lequel le serveur Node tente de démarrer est déjà utilisé.",
+        "node_eaddrinuse_fix": [
+            "Arrêtez le processus précédent.",
+            "Ou exécutez `npx kill-port <port>`.",
+            "Ou modifiez le numéro de port."
+        ],
+        "git_push_rejected_cause": "Le dépôt distant contient des commits qui manquent sur votre branche locale.",
+        "git_push_rejected_fix": [
+            "Récupérez d'abord les modifications distantes : `git pull --rebase origin main`",
+            "Résolvez les conflits éventuels.",
+            "Recommencez : `git push origin main`"
+        ],
+        "git_merge_conflict_cause": "Des modifications conflictuelles empêchent le merge automatique.",
+        "git_merge_conflict_fix": [
+            "Ouvrez le fichier et résolvez les marqueurs de conflit (`<<<<<<<`, `=======`, `>>>>>>>`).",
+            "Exécutez `git add <fichier>`.",
+            "Exécutez `git commit -m \"Résolution de conflit\"`."
+        ],
+        "git_detached_head_cause": "Vous êtes en mode 'HEAD détaché'.",
+        "git_detached_head_fix": [
+            "Créez une nouvelle branche : `git switch -c nom-de-branche`",
+            "Ou revenez sur main : `git checkout main`"
+        ],
+        "git_auth_failed_cause": "Échec d'authentification avec le serveur Git distant.",
+        "git_auth_failed_fix": [
+            "Ajoutez votre clé SSH : `ssh-add ~/.ssh/id_ed25519`.",
+            "Vérifiez vos jetons d'accès ou clés SSH."
+        ]
+    }
+}

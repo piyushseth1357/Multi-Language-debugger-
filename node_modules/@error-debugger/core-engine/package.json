@@ -1,0 +1,16 @@
+{
+  "name": "@error-debugger/core-engine",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "npx tsc",
+    "test": "npx tsc && node dist/__tests__/engine.test.js"
+  },
+  "dependencies": {
+    "@error-debugger/shared-types": "*"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  }
+}

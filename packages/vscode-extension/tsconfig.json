@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "declaration": true,
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "strict": true,
+    "noImplicitAny": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "composite": true,
+    "baseUrl": ".",
+    "paths": {
+      "@error-debugger/shared-types": ["../shared-types/src"],
+      "@error-debugger/core-engine": ["../core-engine/src"]
+    }
+  },
+  "include": ["src/**/*"],
+  "references": [
+    { "path": "../shared-types" },
+    { "path": "../core-engine" }
+  ]
+}
