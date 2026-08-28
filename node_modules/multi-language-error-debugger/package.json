@@ -4,6 +4,7 @@
   "description": "Automatically intercepts compile, runtime, and Git errors and explains them in Hindi/Hinglish, Spanish, French, or English with 1-click code fixes.",
   "version": "1.0.0",
   "publisher": "piyushseth",
+  "icon": "media/icon.png",
   "author": {
     "name": "Piyush Seth"
   },
