@@ -77,4 +77,4 @@ The debugger supports **4 languages**:
 ## 📄 License
 Licensed under the [Apache License 2.0](LICENSE) - Free for personal, commercial, and open-source use.
 
-*Created with ❤️ by **Piyush Seth***
+*Created by **Piyush Seth***
