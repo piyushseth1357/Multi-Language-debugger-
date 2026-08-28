@@ -1,0 +1,12 @@
+<idea-plugin>
+  <id>com.piyushseth.errordebugger</id>
+  <name>Multi-Language Error Debugger</name>
+  <version>1.0.0</version>
+  <vendor email="piyush.seth.9696@gmail.com" url="https://github.com/piyushseth1357">Piyush Seth</vendor>
+  <description><![CDATA[
+    Automatic Compile-Time, Runtime, and Git Error Debugger supporting Hindi/Hinglish, Spanish, French, and English by Piyush Seth.
+  ]]></description>
+  <change-notes><![CDATA[ Initial release of Multi-Language Error Debugger v1.0.0 ]]></change-notes>
+  <idea-version since-build="223.0"/>
+  <depends>com.intellij.modules.platform</depends>
+</idea-plugin>

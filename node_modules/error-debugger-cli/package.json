@@ -1,13 +1,15 @@
 {
-  "name": "error-debugger-cli",
-  "version": "1.0.0",
+  "name": "piyushseth1357-error-debugger",
+  "version": "1.0.2",
+  "author": "Piyush Seth",
   "description": "Standalone CLI runner for Multi-Language Error Debugger",
   "main": "dist/cli.js",
   "bin": {
+    "piyushseth1357-error-debugger": "dist/cli.js",
     "error-debugger": "dist/cli.js"
   },
   "scripts": {
-    "build": "npx tsc"
+    "build": "npx esbuild src/cli.ts --bundle --outfile=dist/cli.js --platform=node --banner:js=\"#!/usr/bin/env node\""
   },
   "dependencies": {
     "@error-debugger/core-engine": "*",
@@ -15,6 +17,7 @@
   },
   "devDependencies": {
     "@types/node": "^20.11.0",
+    "esbuild": "^0.19.11",
     "typescript": "^5.3.3"
   }
 }
